@@ -5,6 +5,8 @@ import com.hackathon.hackathon.Repository.LocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class LocationServiceInpl implements LocationService {
 
@@ -17,9 +19,10 @@ public class LocationServiceInpl implements LocationService {
     }
 
     @Override
-    public Location getLocation(String username) {
-//        return locationRepository.findTop1ByUsernameOrderByCreated(username).get(0);
-        return null;
+    public Location getLocation() {
+        List<Location> data = locationRepository.findTop1ByOrderByIdDesc();
+        if(data.size() > 0) return data.get(0);
+        else return null;
     }
 
 }

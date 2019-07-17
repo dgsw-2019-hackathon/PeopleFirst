@@ -16,9 +16,8 @@ public class HeartRateController {
         heartRateService.heartRate(heartRate);
     }
 
-    @GetMapping("/heartRate/{userId}")
-    public HeartRate getHeartRate(@PathVariable String username) {
-//        return heartRateService.getHeartRate(username);
-        return null;
+    @GetMapping("/heartRate")
+    public HeartRate getHeartRate() {
+        return heartRateService.getHeartRate();
     }
 }

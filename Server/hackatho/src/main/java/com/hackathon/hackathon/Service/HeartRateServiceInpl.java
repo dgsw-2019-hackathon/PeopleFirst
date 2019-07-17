@@ -5,6 +5,8 @@ import com.hackathon.hackathon.Repository.HeartRateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class HeartRateServiceInpl implements HeartRateService {
 
@@ -14,6 +16,14 @@ public class HeartRateServiceInpl implements HeartRateService {
     @Override
     public void heartRate(HeartRate heartRate) {
         heartRateRepository.save(heartRate);
+    }
+
+    @Override
+    public HeartRate getHeartRate() {
+        List<HeartRate> data = heartRateRepository.findTop1ByOrderByIdDesc();
+        if(data.size() > 0)
+            return data.get(0);
+        else return null;
     }
 //
 //    @Override

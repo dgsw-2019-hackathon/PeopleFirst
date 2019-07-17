@@ -6,5 +6,5 @@ public interface HeartRateService {
 
     void heartRate(HeartRate heartRate);
 
-//    HeartRate getHeartRate(String username);
+    HeartRate getHeartRate();
 }

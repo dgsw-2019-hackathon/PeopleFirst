@@ -6,6 +6,6 @@ public interface LocationService {
 
     void location(Location location);
 
-    Location getLocation(String username);
+    Location getLocation();
 
 }

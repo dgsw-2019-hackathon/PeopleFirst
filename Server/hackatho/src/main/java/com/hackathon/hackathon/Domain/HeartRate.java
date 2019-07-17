@@ -16,9 +16,9 @@ public class HeartRate {
     @Id
     private Long id;
 
-    private String heartRate;
+    private int heartRate;
 
-    public HeartRate(String username, String heartRate) {
+    public HeartRate(int heartRate) {
         this.heartRate = heartRate;
     }
 }

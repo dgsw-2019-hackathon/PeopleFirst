@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface HeartRateRepository extends JpaRepository<HeartRate, Long> {
-//    List<HeartRate> findTop1ByUsernameOrderByCreated(String username);
+    List<HeartRate> findTop1ByOrderByIdDesc();
 }

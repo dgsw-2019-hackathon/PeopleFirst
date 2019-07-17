@@ -16,8 +16,8 @@ public class LocationController {
         locationService.location(location);
     }
 
-    @GetMapping("/location/{userId}")
-    public Location getLocation(@PathVariable String username) {
-        return locationService.getLocation(username);
+    @GetMapping("/location")
+    public Location getLocation() {
+        return locationService.getLocation();
     }
 }
